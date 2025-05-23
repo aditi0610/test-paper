@@ -1,98 +1,120 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+************ TEST : 23 MAY 2025 ************* ADITI PARIHAR **************
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Answer1: A progressive Node.js framework for building efficient, scalable          server-side applications using TypeScript and  CLI tools
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+Answer2:  Services are injected using the constructor.
+          Managed by the module system. software design pattern where a class receives its dependencies from an external source rather than creating them itself.
+          NestJS handles it using decorators like @Injectable().
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Project setup
+Answer3:  @Injectable() is used to declare a class as a service or provider.
+           @Controller() is used to define a controller that handles HTTP requests
 
-```bash
-$ npm install
-```
 
-## Compile and run the project
+Answer4:   DTO is a TypeScript class used to define the shape of data sent or received for example : POST or PUT requests. It helps with validation(IsNotEmpty, IsInt etc) and typing.
 
-```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
+Answer5:   pipe: Pipes are used to transform input data or validate it. we can use built-in pipes like ValidationPipe or create custom pipes.Custom pipes are created in a separate file, and then used in main.ts or inside controllers/services.
 
-# production mode
-$ npm run start:prod
-```
 
-## Run tests
+Answer6:  @Param() – Gets data from URL path ex: /user/:id
+          @Query() – Gets data from URL query string ex: /products?page=1&limit=10
+          @Body() – Gets data from request body : used in POST/PUT
 
-```bash
-# unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
+Answer7:  GET requests should not have a body. 
+when i run : "message": "Cannot GET /",
+             "error": "Not Found",
+             "statusCode": 404
 
-# test coverage
-$ npm run test:cov
-```
+Right way is: @Get('user')
+              getUser(@Query('name') name: string) {
+              return `Hello ${name}`;
+          }
+and we can also use @Param().
 
-## Deployment
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Answer8:  it must be accessed using this.todos. this keyword is missing. 
+Right way is:  @Injectable()
+                    export class TodoService {
+                      todos = [];
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+                      create(todo: any) {
+                        this.todos.push(todo);
+                      }
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+                      findAll() {
+                        return  this.todos;
+                      }
+                    }
 
-## Resources
 
-Check out a few resources that may come in handy when working with NestJS:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Answer9: This is http request and url of every request,
+yes it will work on every route, only if we add this globally.
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+Answer10:  updateTodo(@Param('id') id: string, @Body() updateDto: UpdateTodoDto) {
+  const todoId = Number(id);  // convert string to number
+  console.log(typeof todoId); // prints "number"
+}
+& mistake is that @Param() always returns string.
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Answer11:  Modules: Root module. they combine controller and s  
+           Controllers: Handle incoming requests and return responses. create endpoints.
+           Providers (Services): contain the business logic of the application.defined using the @Injectable() decorator
+
+
+
+
+Answer12: * nest generate resource tasks [using cli]
+          OR 
+          nest g module tasks
+          nest g service tasks
+          nest g controller tasks
+
+         * @Entity() decorator used
+         * for validation: first install class-validator
+         :- npm install class-validator class-transformer
+         * In dto: ApiProperty for swagger UI, IsNotEmpty,NotEquals,Min,Max etc validations.
+         * swagger setup for ui. 
+
+
+
+
+ Answer13: TypeORM is Object-Relational Mapping (ORM) library for TypeScript & JavaScript. It allows developers to interact with databases 
+ 1. install typeorm: npm install @nestjs/typeorm typeorm pg
+ 2. Use TypeOrmModule.forRoot()[In app module with type,host,port,username,password,database,entity etc] and TypeOrmModule.forFeature()[in module]
+ 3. Entities: Classes that map to database tables.
+ 4. Repositories: Provide methods to interact with the database like: find, save, delete etc.
+ 5. Relations: Define relationships between entities like: OneToMany, ManyToOne.
+
+
+
+
+Answer14: JWT Auth Implementation: Use @nestjs/jwt and PassportModule.
+          1: nest g guard auth (create guard)
+          2: import CanActive,ExecutionContext
+          3. get the http request
+          4: and check the request is valid
+          5: private validate request
+          6: check if the user is authenticated
+          7. Create AuthGuard using Passport strategies.
+          8.  Strategies for JWT, local, Google, etc.
+          9. Custom logic for protecting routes, used with @UseGuards(JwtAuthGuard)
+          10. ApiBearer@ApiBearerAuth() and so on.......
+
+
+
+*********************Thank You ***************************
+
+     
+
+
+
+
